@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-koi-orange: #f77351;
+  --color-light-sand: #f9dfc8;
+  --color-charcoal-sand: #232323;
+}
+
+@layer base {
+  html {
+    font-family: "Rubik";
+    @apply text-light-sand;
+  }
+
+  .main {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: auto;
+
+    background:
+      linear-gradient(50deg, rgba(5, 5, 5, 0.9), rgba(35, 35, 35, 0.9)),
+      url("assets/noise.svg");
+  }
+
+  h1 {
+    @apply text-6xl;
+    color: var(--color-koi-orange);
+  }
+
+  h2 {
+    @apply text-4xl;
+    color: var(--color-koi-orange);
+  }
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/font/Rubik.woff2") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/font/Rubik-Medium.woff2") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 55ch;
+}
+
+.nav {
+  display: flex;
+  gap: 4em;
+}
+
+.nav-item {
+  color: var(--color-charcoal-sand);
+
+  padding-block: 0.25em;
+  padding-inline: 0.75em;
+
+  border-radius: 0.25em;
+
+  background-color: var(--color-light-sand);
+
+  text-decoration: none;
+}
