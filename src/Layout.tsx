@@ -19,7 +19,7 @@ export function Layout() {
 
         <div
           ref={mainRef}
-          className="overflow-auto"
+          className="size-full overflow-auto"
         >
           <Outlet />
         </div>

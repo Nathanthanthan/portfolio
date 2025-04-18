@@ -13,16 +13,20 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/" element={<Layout />}>
         <Route index element={<Index />} />
 
-        <Route path="réalisations" element={<Realisations />} />
+        <Route path="réalisations" element={<Realisations />}>
+          <Route path=":real" element={<Realisations />} />
+        </Route>
 
-        <Route path="compétences" element={<Competences />} />
+        <Route path="compétences" element={<Competences />}>
+          <Route path=":comp" element={<Competences />} />
+        </Route>
 
         <Route path="contact" element={<Contact />} />
 
-        <Route
+        {/* <Route
           path="*"
           element={<Navigate to="/" replace />}
-        />
+        /> */}
       </Route>
     </Routes>
   </BrowserRouter>
