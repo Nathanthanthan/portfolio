@@ -1,11 +1,11 @@
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router';
-import { Layout } from './Layout';
-import { Index } from './pages/Index';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import "./global.css";
-import { Realisations } from './pages/Realisations';
+import { Layout } from './Layout';
 import { Competences } from './pages/Competences';
 import { Contact } from './pages/Contact';
+import { Index } from './pages/Index';
+import { Realisations } from './pages/Realisations';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -18,7 +18,12 @@ createRoot(document.getElementById('root')!).render(
         <Route path="compétences" element={<Competences />} />
 
         <Route path="contact" element={<Contact />} />
+
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
       </Route>
     </Routes>
   </BrowserRouter>
-)
+);

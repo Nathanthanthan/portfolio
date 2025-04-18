@@ -6,6 +6,20 @@
   --color-charcoal-sand: #232323;
 }
 
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/font/Rubik.woff2") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/font/Rubik-Medium.woff2") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 @layer base {
   html {
     font-family: "Rubik";
@@ -18,9 +32,8 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    overflow: auto;
+    overflow: hidden;
 
     background:
       linear-gradient(50deg, rgba(5, 5, 5, 0.9), rgba(35, 35, 35, 0.9)),
@@ -36,54 +49,9 @@
     @apply text-4xl;
     color: var(--color-koi-orange);
   }
-}
 
-@font-face {
-  font-family: "Rubik";
-  src: url("assets/font/Rubik.woff2") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rubik";
-  src: url("assets/font/Rubik-Medium.woff2") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-
-  max-width: 55ch;
-}
-
-.nav {
-  display: flex;
-  gap: 4em;
-}
-
-.nav-item {
-  color: var(--color-charcoal-sand);
-
-  padding-block: 0.25em;
-  padding-inline: 0.75em;
-
-  border-radius: 0.25em;
-
-  background-color: var(--color-light-sand);
-
-  text-decoration: none;
+  h3 {
+    @apply text-2xl;
+    color: var(--color-koi-orange);
+  }
 }
