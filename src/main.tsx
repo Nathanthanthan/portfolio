@@ -10,8 +10,8 @@ import { Realisations } from './pages/Realisations';
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/accueil" element={<Layout />}>
-        <Route index element={<Index />} />
+      <Route path="/" element={<Layout />}>
+        <Route path="accueil" element={<Index />} />
 
         <Route path="réalisations" element={<Realisations />}>
           <Route path=":real" element={<Realisations />} />
@@ -22,6 +22,11 @@ createRoot(document.getElementById('root')!).render(
         </Route>
 
         <Route path="contact" element={<Contact />} />
+
+        <Route
+          path=""
+          element={<Navigate to="/accueil" replace />}
+        />
 
         <Route
           path="*"

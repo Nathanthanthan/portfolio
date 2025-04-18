@@ -4,6 +4,14 @@ import { Link } from "react-router";
 import { bac, esiea, holis, presentation } from "../assets/images/index";
 import { MainRefCurrentContext } from "../Layout";
 
+function txClassListAdd(element: Element, className: string) {
+  const twClasses: string[] = className.split(" ");
+
+  for (const twClass of twClasses) {
+    element.classList.add(twClass);
+  }
+}
+
 export function Index() {
   const parcoursRef = useRef<HTMLHeadingElement>(null);
   const mainRefCurrent = useContext(MainRefCurrentContext);
@@ -21,11 +29,15 @@ export function Index() {
         if (!navRef.current) return;
 
         if ((e.target as HTMLDivElement).scrollTop <= initialNavTop) {
-          navRef.current.classList = "";
+          navRef.current.classList.remove(...navRef.current.classList);
+
           setIsNavStuck(false);
         } else {
-          navRef.current.classList = "fixed inset-x-0 top-0 z-10 flex justify-center gap-16 py-3 border-b-2"
-            + " border-light-sand bg-charcoal-sand";
+          txClassListAdd(
+            navRef.current,
+            "fixed inset-x-0 top-0 z-10 flex justify-center gap-16 py-3 border-b-2 border-light-sand bg-charcoal-sand",
+          );
+
           setIsNavStuck(true);
         }
       },
