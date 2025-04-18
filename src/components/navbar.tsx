@@ -6,7 +6,6 @@ export function Navbar() {
 
   if (pathname === "/accueil") return;
 
-  const decodedURL = decodeURI(pathname).replace("/", "");
   const linksToDisplay: string[] = ["accueil", "compétences", "réalisations", "contact"];
 
   return (
