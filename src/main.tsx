@@ -10,7 +10,7 @@ import { Realisations } from './pages/Realisations';
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/accueil" element={<Layout />}>
         <Route index element={<Index />} />
 
         <Route path="réalisations" element={<Realisations />}>
@@ -23,10 +23,10 @@ createRoot(document.getElementById('root')!).render(
 
         <Route path="contact" element={<Contact />} />
 
-        {/* <Route
+        <Route
           path="*"
-          element={<Navigate to="/" replace />}
-        /> */}
+          element={<Navigate to="/accueil" replace />}
+        />
       </Route>
     </Routes>
   </BrowserRouter>

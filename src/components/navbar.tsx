@@ -4,7 +4,7 @@ import { presentation } from "../assets/images";
 export function Navbar() {
   const { pathname } = useLocation();
 
-  if (pathname === "/") return;
+  if (pathname === "/accueil") return;
 
   const decodedURL = decodeURI(pathname).replace("/", "");
   const linksToDisplay: string[] = ["accueil", "compétences", "réalisations", "contact"];
@@ -29,7 +29,7 @@ export function Navbar() {
           </b>
         </div>
 
-        {linksToDisplay.map((link) => decodedURL !== link && (
+        {linksToDisplay.map((link) => (
           <Link
             key={link}
             to={link}
