@@ -128,21 +128,21 @@ export function Index() {
             </div>
 
             <Link
-              to="réalisations"
+              to="../réalisations"
               className="px-3 py-1 rounded bg-light-sand text-charcoal-sand"
             >
               Mes réalisations
             </Link>
 
             <Link
-              to="compétences"
+              to="../compétences"
               className="px-3 py-1 rounded bg-light-sand text-charcoal-sand"
             >
               Mes compétences
             </Link>
 
             <Link
-              to="contact"
+              to="../contact"
               className="px-3 py-1 rounded bg-light-sand text-charcoal-sand"
             >
               Contact
